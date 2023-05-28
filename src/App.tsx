@@ -1,4 +1,4 @@
-import { Center, Grid, GridItem } from '@chakra-ui/react';
+import { Center, Grid, GridItem, Heading } from '@chakra-ui/react';
 import SearchBar from './components/SearchBar';
 import Logo from './components/Logo';
 
@@ -9,12 +9,8 @@ function App() {
         base: `'main'`,
       }}
     >
-      <GridItem
-        height="calc(100vh)"
-        area="main"
-        bgGradient="linear(to-r, #E8E1E1, #D2C2B0)"
-      >
-        <Center padding={2}>
+      <GridItem className="body" height="calc(100vh)" area="main">
+        <Center padding={5}>
           <Logo />
         </Center>
         <SearchBar />
