@@ -1,4 +1,4 @@
-import { AbsoluteCenter, Box, Center, Grid, GridItem } from '@chakra-ui/react';
+import { Center, Grid, GridItem } from '@chakra-ui/react';
 import SearchBar from './components/SearchBar';
 import Logo from './components/Logo';
 
@@ -17,9 +17,7 @@ function App() {
         <Center padding={2}>
           <Logo />
         </Center>
-        <AbsoluteCenter width={'50%'}>
-          <SearchBar />
-        </AbsoluteCenter>
+        <SearchBar />
       </GridItem>
     </Grid>
   );
