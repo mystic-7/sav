@@ -1,2 +1,2 @@
 # sav
-restaurant AI recomendentions personal project
+AI project for restaurant recomendentions
