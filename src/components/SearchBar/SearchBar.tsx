@@ -1,4 +1,4 @@
-import { AbsoluteCenter, Input } from '@chakra-ui/react';
+import { Input } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import './SearchBar.css';
 
@@ -15,19 +15,20 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className={`search-bar ${submitted ? 'submitted' : ''}`}>
-        <Input
-          ref={ref}
-          borderRadius={20}
-          focusBorderColor="black"
-          placeholder="¿A dónde quieres ir hoy 👋🏻?"
-          height={'70px'}
-          width={'40%'}
-          textAlign={'center'}
-          variant={'filled'}
-        />
-      </div>
+    <form
+      onSubmit={handleSubmit}
+      className={`search-bar ${submitted ? 'submitted' : ''}`}
+    >
+      <Input
+        ref={ref}
+        borderRadius={20}
+        focusBorderColor="black"
+        placeholder="¿A dónde quieres ir hoy 👋🏻?"
+        height={'70px'}
+        width={'40%'}
+        textAlign={'center'}
+        variant={'filled'}
+      />
     </form>
   );
 };

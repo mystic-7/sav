@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 import ChoiceCard from './ChoiceCard';
 
 const GameGrid = () => {
@@ -9,11 +9,7 @@ const GameGrid = () => {
   ];
   return (
     <>
-      <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
-        padding={15}
-        spacing={10}
-      >
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} padding={15} spacing={10}>
         {choices.map((choice) => (
           <ChoiceCard key={choice.id} choice={choice} />
         ))}
