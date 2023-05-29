@@ -2,13 +2,17 @@ import { Input } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = () => {
+interface Props {
+  onRequest: (requestText: string) => void;
+}
+
+const SearchBar = ({ onRequest }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (ref.current) console.log(ref.current.value);
+    if (ref.current) onRequest(ref.current.value);
     if (!submitted) {
       setSubmitted(true);
     }

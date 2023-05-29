@@ -1,4 +1,5 @@
-import LogoBlack from '../assets/logo-black.webp';
+import { useState } from 'react';
+import sd from '../../assets/sd.jpeg';
 import { Card, CardBody, Heading, Image, Text } from '@chakra-ui/react';
 
 interface Choice {
@@ -10,9 +11,10 @@ interface Props {
   choice: Choice;
 }
 const ChoiceCard = ({ choice }: Props) => {
+  const [isHovering, setHover] = useState(false);
   return (
-    <Card borderRadius={10} overflow={'hidden'}>
-      <Image src={LogoBlack} />
+    <Card className="card" borderRadius={10} overflow={'hidden'}>
+      <Image src={sd} />
       <CardBody>
         <Heading fontSize={'2xl'}>{choice.name}</Heading>
       </CardBody>
