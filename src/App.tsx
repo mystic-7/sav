@@ -4,6 +4,7 @@ import {
   GridItem,
   useColorMode,
   useColorModeValue,
+  Box,
 } from '@chakra-ui/react';
 import Logo from './components/Logo';
 import Stage from './components/Stage';
@@ -33,20 +34,21 @@ function App() {
       bg={background}
       backgroundSize="400% 400%"
       animation="gradient 15s ease infinite"
-      height="100vh"
       templateAreas={{
         base: ` 'nav' 'main'`,
       }}
-      h="100vh"
       justifyItems="center"
+      minHeight="100vh"
     >
       <GridItem area="nav" w="100%">
         <Center>
           <Logo />
         </Center>
       </GridItem>
-      <GridItem area="main" w="100%" placeItems="center">
-        <Stage />
+      <GridItem area="main" w="100%">
+        <Box display="flex" justifyContent="center" height="100%">
+          <Stage />
+        </Box>
       </GridItem>
     </Grid>
   );

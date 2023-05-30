@@ -2,7 +2,7 @@ import { SimpleGrid } from '@chakra-ui/react';
 import ChoiceCard from './ChoiceCard.css/ChoiceCard';
 import choices from '../choices';
 
-const GameGrid = () => {
+const ChoiceCardGrid = () => {
   return (
     <>
       <SimpleGrid
@@ -18,4 +18,4 @@ const GameGrid = () => {
   );
 };
 
-export default GameGrid;
+export default ChoiceCardGrid;
