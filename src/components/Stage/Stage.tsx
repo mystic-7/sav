@@ -1,8 +1,9 @@
-import { Box, Grid, GridItem, useColorModeValue } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
-import SearchBar from './SearchBar/SearchBar';
-import CardGrid from './CardGrid';
+import SearchBar from '../SearchBar/SearchBar';
+import CardGrid from '../CardGrid';
+import './Stage.css';
 
 const Stage = () => {
   const [showCardGrid, setShowCardGrid] = useState(false);
@@ -27,11 +28,9 @@ const Stage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
+              transition={{
+                duration: 0.5,
+                ease: 'easeOut',
               }}
             >
               <SearchBar onRequest={handleRequest} />
@@ -45,7 +44,7 @@ const Stage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
             >
               <CardGrid />
             </motion.div>

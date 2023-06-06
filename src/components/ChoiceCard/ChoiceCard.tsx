@@ -11,7 +11,6 @@ interface Props {
   choice: Choice;
 }
 const ChoiceCard = ({ choice }: Props) => {
-  const [isHovering, setHover] = useState(false);
   return (
     <Card
       className="card"

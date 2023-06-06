@@ -7,7 +7,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 import Logo from './components/Logo';
-import Stage from './components/Stage';
+import Stage from './components/Stage/Stage';
 import './App.css';
 
 function App() {
