@@ -12,17 +12,17 @@ const SearchBar = ({ onRequest }: Props) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (ref.current) onRequest(ref.current.value);
+    if (ref.current) {
+      onRequest(ref.current.value);
+      ref.current.value = '';
+    }
     if (!submitted) {
       setSubmitted(true);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={`search-bar ${submitted ? 'submitted' : ''}`}
-    >
+    <form onSubmit={handleSubmit} className={'search-bar'}>
       <Input
         ref={ref}
         borderRadius={20}

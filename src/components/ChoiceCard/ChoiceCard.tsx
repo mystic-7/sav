@@ -13,7 +13,14 @@ interface Props {
 const ChoiceCard = ({ choice }: Props) => {
   const [isHovering, setHover] = useState(false);
   return (
-    <Card className="card" borderRadius={10} overflow={'hidden'}>
+    <Card
+      className="card"
+      borderRadius={10}
+      overflow={'hidden'}
+      transitionDuration={'0.3s'}
+      size={'lg'}
+      _hover={{ transform: 'scale(1.05)' }}
+    >
       <Image src={sd} />
       <CardBody>
         <Heading fontSize={'2xl'}>{choice.name}</Heading>

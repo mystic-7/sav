@@ -20,7 +20,7 @@ function App() {
     return currentHour >= 6 && currentHour < 18;
   };
 
-  // Update the color mode based on the time of day
+  // // Update the color mode based on the time of day
   if (
     (colorMode === 'light' && !isDayTime()) ||
     (colorMode === 'dark' && isDayTime())

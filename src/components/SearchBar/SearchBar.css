@@ -3,9 +3,4 @@
     place-items: center;
     height: 100%;
     width: 100%;
-    transition: transform 0.7s ease;
-  }
-  
-  .submitted {
-    transform: translateY(-100%);
   }

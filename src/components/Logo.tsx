@@ -3,7 +3,7 @@ import { Image, Box } from '@chakra-ui/react';
 
 const Logo = ({ size = '100px' }) => {
   return (
-    <Box pt={4} maxW={size} maxH={size}>
+    <Box pt={10} maxW={size} maxH={size}>
       <Image src={LogoBlack} mx="auto" />
     </Box>
   );

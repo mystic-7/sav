@@ -1,8 +1,8 @@
 import { SimpleGrid } from '@chakra-ui/react';
-import ChoiceCard from './ChoiceCard.css/ChoiceCard';
+import ChoiceCard from './ChoiceCard/ChoiceCard';
 import choices from '../choices';
 
-const ChoiceCardGrid = () => {
+const CardGrid = () => {
   return (
     <>
       <SimpleGrid
@@ -18,4 +18,4 @@ const ChoiceCardGrid = () => {
   );
 };
 
-export default ChoiceCardGrid;
+export default CardGrid;
