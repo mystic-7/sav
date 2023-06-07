@@ -29,7 +29,7 @@ const SearchBar = ({ onRequest }: Props) => {
         focusBorderColor="black"
         placeholder="¿A dónde quieres ir hoy 👋🏻?"
         height={'70px'}
-        width={'40%'}
+        width={{ sm: '70%', md: '60%', lg: '40%' }}
         textAlign={'center'}
         variant={'filled'}
       />

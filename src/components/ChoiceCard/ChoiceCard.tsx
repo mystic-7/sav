@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import sd from '../../assets/sd.jpeg';
-import { Card, CardBody, Heading, Image, Text } from '@chakra-ui/react';
+import { Card, CardBody, Heading, Image } from '@chakra-ui/react';
 
 interface Choice {
   id: number;
@@ -20,7 +19,7 @@ const ChoiceCard = ({ choice }: Props) => {
       size={'lg'}
       _hover={{ transform: 'scale(1.05)' }}
     >
-      <Image src={sd} />
+      <Image src={sd} boxSize={200} />
       <CardBody>
         <Heading fontSize={'2xl'}>{choice.name}</Heading>
       </CardBody>

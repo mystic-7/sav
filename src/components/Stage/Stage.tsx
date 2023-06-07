@@ -1,9 +1,10 @@
-import { Box, Collapse, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Center, Collapse, Grid, GridItem } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import CardGrid from '../CardGrid';
 import './Stage.css';
+import ChatBox from '../ChatBox';
 
 const Stage = () => {
   const [showCardGrid, setShowCardGrid] = useState(false);
@@ -36,10 +37,14 @@ const Stage = () => {
               <SearchBar onRequest={handleRequest} />
             </motion.div>
           </AnimatePresence>
+          {!showCardGrid && <Box h={200} />}
         </GridItem>
         <GridItem>
           <Collapse in={showCardGrid} animateOpacity>
             <CardGrid />
+            <Center>
+              <ChatBox />
+            </Center>
           </Collapse>
         </GridItem>
       </Grid>
