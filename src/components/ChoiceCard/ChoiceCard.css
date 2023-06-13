@@ -1,7 +1,16 @@
-.card {
-    transition: all 0.3s
-}
-
-.card:hover {
-    transform: scale(1.15)
-}
+.choice-card {
+    border-radius: 10;
+    overflow: hidden;
+    transition-duration: 0.5s;
+  }
+  
+  .choice-card img {
+    object-position: top;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  
+  .choice-card:hover {
+    transform: scale(1.1);
+  }
+  

@@ -1,27 +1,65 @@
-import sd from '../../assets/sd.jpeg';
-import { Card, CardBody, Heading, Image } from '@chakra-ui/react';
+import {
+  Card,
+  CardBody,
+  Heading,
+  Image,
+  Text,
+  Stack,
+  Collapse,
+} from '@chakra-ui/react';
+import './ChoiceCard.css';
+import { useState } from 'react';
 
 interface Choice {
   id: number;
   name: string;
+  img: string;
 }
 
 interface Props {
   choice: Choice;
 }
+
 const ChoiceCard = ({ choice }: Props) => {
+  const [hover, setHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
   return (
     <Card
-      className="card"
-      borderRadius={10}
-      overflow={'hidden'}
-      transitionDuration={'0.3s'}
-      size={'lg'}
-      _hover={{ transform: 'scale(1.05)' }}
+      className="choice-card"
+      h={'md'}
+      onMouseEnter={() => handleMouseEnter()}
+      onMouseLeave={() => handleMouseLeave()}
+      variant="elevated"
+      background={'black.500'}
     >
-      <Image src={sd} boxSize={200} />
-      <CardBody>
-        <Heading fontSize={'2xl'}>{choice.name}</Heading>
+      <Image src={choice.img} boxSize={400} maxH={hover ? '60%' : '80%'} />
+      <CardBody paddingY={2} paddingX={4}>
+        <Stack mt="2" spacing="1">
+          <Heading
+            size={hover ? 'md' : 'xl'}
+            textColor={'MenuText'}
+            transitionDuration={'0.5s'}
+          >
+            {choice.name}
+          </Heading>
+          <Collapse in={hover}>
+            <Text>
+              This sofa is perfect for modern tropical spaces, baroque inspired
+              spaces, earthy toned spaces and for people who love a chic design
+              with a sprinkle of vintage design.
+            </Text>
+            <Text color="blue.600" fontSize="lg">
+              $450
+            </Text>
+          </Collapse>
+        </Stack>
       </CardBody>
     </Card>
   );

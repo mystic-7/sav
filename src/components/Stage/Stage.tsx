@@ -1,14 +1,14 @@
-import { Box, Center, Collapse, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Collapse, Grid, GridItem } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import CardGrid from '../CardGrid';
 import './Stage.css';
-import ChatBox from '../ChatBox';
+import ChatBox from '../ChatBox/ChatBox';
 
 const Stage = () => {
   const [showCardGrid, setShowCardGrid] = useState(false);
-
+  const showBar = true;
   const handleRequest = (text: string) => {
     console.log(text);
     setShowCardGrid(true);
@@ -37,14 +37,18 @@ const Stage = () => {
               <SearchBar onRequest={handleRequest} />
             </motion.div>
           </AnimatePresence>
-          {!showCardGrid && <Box h={200} />}
+          {!showCardGrid && <Box h={100} />}
         </GridItem>
         <GridItem>
-          <Collapse in={showCardGrid} animateOpacity>
+          <Collapse className="collapse" in={showCardGrid} animateOpacity>
             <CardGrid />
-            <Center>
+            <Box
+              display={'flex'}
+              justifyItems={'flex-start'}
+              alignItems={'center'}
+            >
               <ChatBox />
-            </Center>
+            </Box>
           </Collapse>
         </GridItem>
       </Grid>

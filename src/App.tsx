@@ -39,7 +39,7 @@ function App() {
       justifyItems="center"
       minHeight="100vh"
     >
-      <GridItem area="nav" w="100%" h="200px">
+      <GridItem area="nav" w="100%" paddingBottom={10}>
         <Center>
           <Logo />
         </Center>

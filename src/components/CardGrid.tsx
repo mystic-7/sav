@@ -6,8 +6,9 @@ const CardGrid = () => {
   return (
     <>
       <SimpleGrid
-        columns={{ sm: 2, md: 2, lg: 3, xl: 4 }}
-        padding={15}
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        paddingY={10}
+        paddingX={20}
         spacing={10}
       >
         {choices.map((choice) => (

@@ -1,17 +1,18 @@
-import { Card, CardBody, Center, grid } from '@chakra-ui/react';
+import { Card, CardBody } from '@chakra-ui/react';
+import './ChatBox.css';
 
 const ChatBox = () => {
   return (
     <Card
-      className="card"
+      className="chat-box"
       borderRadius={10}
       overflow={'hidden'}
       height={'140px'}
-      width={'40%'}
       margin={10}
+      backgroundColor={'transparent'}
     >
       <CardBody display={'grid'} placeContent={'center'}>
-        Chupame la pija
+        Aqui va la respuesta
       </CardBody>
     </Card>
   );
