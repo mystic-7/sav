@@ -7,7 +7,7 @@ const CardGrid = () => {
     <>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        paddingY={10}
+        paddingY={7}
         paddingX={20}
         spacing={10}
       >

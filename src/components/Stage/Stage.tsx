@@ -1,4 +1,4 @@
-import { Box, Collapse, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Center, Collapse, Fade, Grid, GridItem } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
@@ -40,15 +40,11 @@ const Stage = () => {
           {!showCardGrid && <Box h={100} />}
         </GridItem>
         <GridItem>
-          <Collapse className="collapse" in={showCardGrid} animateOpacity>
-            <CardGrid />
-            <Box
-              display={'flex'}
-              justifyItems={'flex-start'}
-              alignItems={'center'}
-            >
+          <Collapse in={showCardGrid}>
+            <Center>
               <ChatBox />
-            </Box>
+            </Center>
+            <CardGrid />
           </Collapse>
         </GridItem>
       </Grid>

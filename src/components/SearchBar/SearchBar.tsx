@@ -1,6 +1,7 @@
 import { Input } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import './SearchBar.css';
+import { isDayTime } from '../../dayTime';
 
 interface Props {
   onRequest: (requestText: string) => void;
@@ -28,6 +29,10 @@ const SearchBar = ({ onRequest }: Props) => {
         borderRadius={20}
         focusBorderColor="black"
         placeholder="¿A dónde quieres ir hoy 👋🏻?"
+        _placeholder={{
+          opacity: 0.7,
+          color: isDayTime() ? 'default' : 'white',
+        }}
         height={'70px'}
         width={{ sm: '70%', md: '60%', lg: '40%' }}
         textAlign={'center'}

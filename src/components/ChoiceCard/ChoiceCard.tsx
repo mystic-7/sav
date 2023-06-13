@@ -30,6 +30,7 @@ const ChoiceCard = ({ choice }: Props) => {
   const handleMouseLeave = () => {
     setHover(false);
   };
+
   return (
     <Card
       className="choice-card"
@@ -43,7 +44,7 @@ const ChoiceCard = ({ choice }: Props) => {
       <CardBody paddingY={2} paddingX={4}>
         <Stack mt="2" spacing="1">
           <Heading
-            size={hover ? 'md' : 'xl'}
+            size={hover ? 'md' : 'lg'}
             textColor={'MenuText'}
             transitionDuration={'0.5s'}
           >

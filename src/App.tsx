@@ -8,16 +8,11 @@ import {
 import Logo from './components/Logo';
 import Stage from './components/Stage/Stage';
 import './App.css';
+import { isDayTime } from './dayTime';
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   const background = useColorModeValue('light.gradient', 'dark.gradient');
-
-  // Function to check if it's currently day time
-  const isDayTime = () => {
-    const currentHour = new Date().getHours();
-    return currentHour >= 6 && currentHour < 18;
-  };
 
   // // Update the color mode based on the time of day
   if (
