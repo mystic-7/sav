@@ -1,18 +1,30 @@
 import { Box, Center, Grid, GridItem } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import SearchBar from '../SearchBar/SearchBar';
 import CardGrid from '../CardGrid';
-import './Stage.css';
 import ChatBox from '../ChatBox/ChatBox';
-import { useAutoAnimate } from '@formkit/auto-animate/react';
+import callOpenAI from '../../services/openai';
+import './Stage.css';
 
 const Stage = () => {
+  interface Choice {
+    text: string;
+    index: number;
+    longprobs: null;
+    finish_reason: string;
+  }
+
   const [showCardGrid, setShowCardGrid] = useState(false);
+  const [requestText, setRequest] = useState('');
+  const [AIcompletion, setCompletion] = useState('');
+
   const handleRequest = (text: string) => {
-    console.log(text);
+    setRequest(text);
     setShowCardGrid(true);
   };
+
   const [gridRef] = useAutoAnimate();
 
   return (
